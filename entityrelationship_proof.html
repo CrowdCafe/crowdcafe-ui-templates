@@ -5,7 +5,9 @@
 		<div class="item-inner" style="padding-left:10px;">
 			<div class="item-text"><b>Do you understand from the text:</b></div>
 			<div class="item-text" style='padding-left:10px;' id="dataitem_text_{{item.id}}">{{item.value.sentence}}</div>
-			<div class="item-text"><b>that: {{item.value.name1}} -> {{item.value.relationship}} -> {{item.value.name2}} ?</b></div>
+			<div class="item-text">
+				<b>that: {{item.value.name1}} -> {{item.value.relationship}} -> {{item.value.name2}} ?</b>
+			</div>
 		</div>
 	</div>
 	<div class="swipeout-actions">
@@ -15,15 +17,3 @@
 		</div>
 	</div>
 </li>
-
-<script>
-function wrapLink(string){
-	return '<a href="#" data-popup=".iframe" iframe="http://en.m.wikipedia.org/wiki/'+string+'" class="open-popup">'+string+'<\/a>';
-}
-var textarea = document.getElementById("dataitem_text_{{item.id}}");
-	text = textarea.innerHTML;
-	console.log(text);
-	text = text.replace('{{item.value.name1}}',wrapLink);
-	text = text.replace('{{item.value.name2}}',wrapLink);
-	textarea.innerHTML = text;
-</script>
