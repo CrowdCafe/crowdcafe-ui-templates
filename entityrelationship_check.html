@@ -1,14 +1,22 @@
 <div class="list-block hide-if-empty">
 	<div class="list-group">
 		<ul>
-			<li class="list-group-title"><b>{{forloop.counter}}. Please read the sentence:</b><br/>{{item.value.sentence}}<br/> <b>Answer the questions by swiping from right to left:</b> </li>
+			<li class="dataitem" instance-id="{{item.id}}">
+
+				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' class='dataitem_answer'>
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-text"><b class="muted">{{forloop.counter}}. Please read the text:</b><br/><font style="color:black;">{{item.value.sentence}}</font><br/> <b class="muted">Answer the questions by swiping from right to left:</b> </div>
+					</div>
+				</div>
+			</li>
 			<li class="swipeout dataitem question notanswered" instance-id="{{item.id}}">
 
 				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' class='dataitem_answer'>
 				<div class="swipeout-content item-content">
 					<div class="item-media"><i class="fa fa-question-circle"></i></div>
 					<div class="item-inner">
-						<div class="item-text">Do you understand from this sentence that: {{item.value.name1}} -> {{item.value.relationship}} -> {{item.value.name2}} ?</div>
+						<div class="item-text">Do you understand from this text that: <b>{{item.value.name1}}</b> -> <b>{{item.value.relationship}}</b> -> <b>{{item.value.name2}}</b> ?</div>
 					</div>
 				</div>
 				<div class="swipeout-actions">
@@ -24,7 +32,7 @@
 				<div class="swipeout-content item-content">
 					<div class="item-media"><i class="fa fa-question-circle"></i></div>
 					<div class="item-inner">
-						<div class="item-text">Is the sentence too long, badly formed or not understandable?</div>
+						<div class="item-text">Does this text include only 1 clear understandable sentence (after an optional list of tags)?</div>
 					</div>
 				</div>
 				<div class="swipeout-actions">
