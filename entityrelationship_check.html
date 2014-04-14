@@ -1,21 +1,14 @@
 <div class="list-block hide-if-empty">
 	<div class="list-group">
 		<ul>
-			<li class="list-group-title">{{forloop.counter}}. Do you understand from the text:</li>
-			<li>
-				<div class="item-content">
-					<div class="item-inner">
-						<div class="item-text">{{item.value.sentence}} </div>
-					</div>
-				</div>
-			</li>
+			<li class="list-group-title"><b>{{forloop.counter}}. Please read the text:</b><br/>{{item.value.sentence}}<br/> answer the questions by swiping from right to left: </li>
 			<li class="swipeout dataitem question notanswered" instance-id="{{item.id}}">
 
-				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' class='dataitem_answer' value='none'>
+				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' class='dataitem_answer'>
 				<div class="swipeout-content item-content">
 					<div class="item-media"><i class="fa fa-question-circle"></i></div>
 					<div class="item-inner">
-						<div class="item-text">that: {{item.value.name1}} -> {{item.value.relationship}} -> {{item.value.name2}} ?</div>
+						<div class="item-text">Do you understand from this sentence that: {{item.value.name1}} -> {{item.value.relationship}} -> {{item.value.name2}} ?</div>
 					</div>
 				</div>
 				<div class="swipeout-actions">
@@ -26,11 +19,11 @@
 				</div>
 			</li>
 			<li class="swipeout dataitem question notanswered" instance-id="{{item.id}}">
-				<input type = 'hidden' name='dataitem_{{item.id}}_sentence_messy' class='dataitem_answer' value='none'>
+				<input type = 'hidden' name='dataitem_{{item.id}}_sentence_messy' class='dataitem_answer'>
 				<div class="swipeout-content item-content">
 					<div class="item-media"><i class="fa fa-question-circle"></i></div>
 					<div class="item-inner">
-						<div class="item-text">Is the sentence very long, ill formed or not understandable?</div>
+						<div class="item-text">Is the sentence too long, badly formed or not understandable?</div>
 					</div>
 				</div>
 				<div class="swipeout-actions">
@@ -41,11 +34,11 @@
 				</div>
 			</li>
 			<li class="swipeout dataitem question notanswered" instance-id="{{item.id}}">
-				<input type = 'hidden' name='dataitem_{{item.id}}_other_relationships' class='dataitem_answer' value='none'>
+				<input type = 'hidden' name='dataitem_{{item.id}}_other_relationships' class='dataitem_answer'>
 				<div class="swipeout-content item-content">
 					<div class="item-media"><i class="fa fa-question-circle"></i></div>
 					<div class="item-inner">
-						<div class="item-text"> Is there any other relation between the words in the sentence?</div>
+						<div class="item-text">Is there any other relation between the words in the sentence?</div>
 
 					</div>
 				</div>
