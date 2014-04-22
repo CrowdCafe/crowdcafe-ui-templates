@@ -1,148 +1,364 @@
-<!-- QUESTION 1 -->
-<div class="content-block-title">1. Describe your interest during the execution of tasks on CrowdCafe?</div>
-<div class="list-block">
-	<ul>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_interest" value="Complitely boring!">
-				<div class="item-inner">
-					<div class="item-title">Complitely boring!</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_interest" value="Somehow boring">
-				<div class="item-inner">
-					<div class="item-title">Somehow boring</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_interest" value="Plain, routin">
-				<div class="item-inner">
-					<div class="item-title">Plain, routin</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_interest" value="Some were interesting">
-				<div class="item-inner">
-					<div class="item-title">Some were interesting</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_interest" value="Tasks are interesting">
-				<div class="item-inner">
-					<div class="item-title">Tasks are interesting</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_interest" value="Super exciting tasks!">
-				<div class="item-inner">
-					<div class="item-title">Super exciting tasks!</div>
-				</div>
-			</label>
-		</li>
-	</ul>
-</div>
-<!-- END QUESTION 1 -->
-<div class="content-block-title">2. Did you get coffees / desserts in DISI bar as a reward for completing tasks?</div>
-<div class="list-block">
-	<ul>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_reward_problems_existed" value="No">
-				<div class="item-inner">
-					<div class="item-title">No</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_reward_problems_existed" value="Yes">
-				<div class="item-inner">
-					<div class="item-title">Yes</div>
-				</div>
-			</label>
-		</li>
-		
-	</ul>
-</div>
-
-<div class="content-block-title">3. If you experienced any issues with receiving your rewards, please describe them here:</div>
-<div class="list-block">
-	<ul>
-		<li class="align-top">
-			<div class="item-content">
-				<div class="item-inner">
-					<div class="item-input">
-						<textarea name="dataitem_{{item.id}}_reward_problems_description"></textarea>
+<!-- Block 1 -->
+<div class="list-block hide-if-empty">
+	<div class="list-group">
+		<ul>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-text"><b>Initial Background:</b></div>
 					</div>
 				</div>
-			</div>
-		</li>
-	</ul>
-</div>
-<div class="content-block-title">4. Will you continue to perform tasks on CrowdCafe after this initial study?</div>
-<div class="list-block">
-	<ul>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_continue_work" value="No">
-				<div class="item-inner">
-					<div class="item-title">No</div>
-				</div>
-			</label>
-		</li>
-		<li>
-			<label class="label-radio item-content">
-				<input type="radio" name="dataitem_{{item.id}}_continue_work" value="Yes">
-				<div class="item-inner">
-					<div class="item-title">Yes</div>
-				</div>
-			</label>
-		</li>
-	</ul>
-</div>
-<div class="content-block-title">5. How many hours per week do you plan to work on CrowdCafe?:</div>
-<div class="list-block">
-	<ul>
-		<li>
-			<div class="item-content">
-				<div class="item-inner">
-					<div class="item-title label">Hours/week</div>
-					<div class="item-input">
-						<input type="text" name="dataitem_{{item.id}}_how_many_hours" placeholder="hours a week (0.0 - 40)">
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_initial_knowledge_1' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Do you know what crowdsourcing is?</div>
 					</div>
 				</div>
-			</div>
-		</li>
-	</ul>
-</div>
-
-
-<div class="content-block-title">Do you allow us to process your responses data for purposing of improving the service and making academic publications?</div>
-
-<div class="list-block">
-	<ul>
-		<li>
-			<div class="item-content">
-				<div class="item-inner">
-					<div class="item-title label">I allow</div>
-					<div class="item-input">
-						<label class="label-switch">
-							<input type="checkbox" name="dataitem_{{item.id}}_privacy" value="Yes">
-						</label>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_1]"  answer="Heard something">Heard something <br/> about it</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_1]"  answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_1]"  answer="no">No</a>
 					</div>
 				</div>
-			</div>
-		</li>
-	</ul>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_initial_knowledge_2' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Have you ever <b>performed</b> any tasks on platforms like Amazon Mechanical Turk or CrowdFlower?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_2]"  answer="No idea">No idea what<br/> it is</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_2]"  answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_2]"  answer="no">No</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_initial_knowledge_3' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Have you ever <b>posted</b> any tasks on platforms like Amazon Mechanical Turk or CrowdFlower?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_3]"  answer="No idea">No idea what<br/> it is</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_3]"  answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_initial_knowledge_3]"  answer="no">No</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+		</ul>
+	</div>
+</div>
+<!-- Feedback - Sentence Analysis tasks - Experience -->
+<div class="list-block hide-if-empty">
+	<div class="list-group">
+		<ul>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-text"><b>Feedback on "Sentence Analysis" tasks:</b></div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_feedback_sentence_analysis_1' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Did you find "Sentence Analysis" tasks instructions clear?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_feedback_sentence_analysis_1]"  answer="did not read them">Did not <br/>read them</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_feedback_sentence_analysis_1]"  answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_feedback_sentence_analysis_1]"  answer="no">No</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Indicate your interest in performing "Sentence Analysis" task:<br/> -3 - super boring, +3 - super interesting
+							<div class="range-slider">
+								<input type = "range" name = "dataitem_{{item.id}}_feedback_sentence_analysis_2" value-to-text=".text_{{item.id}}_feedback_sentence_analysis_2" min="-3" max="3" value="0" step="1">	
+								<b><p class="text_{{item.id}}_feedback_sentence_analysis_2 center">0</p></b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Indicate how hard "Sentence Analysis" task was for you:<br/> -3 - super hard, +3 - super easy
+							<div class="range-slider">
+								<input type = "range" name = "dataitem_{{item.id}}_feedback_sentence_analysis_3" value-to-text=".text_{{item.id}}_feedback_sentence_analysis_3" min="-3" max="3" value="0" step="1">	
+								<b><p class="text_{{item.id}}_feedback_sentence_analysis_3 center">0</p></b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem question notanswered">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-input item-text">How much time do you think you have spent in average on completing "Sentence Analysis" tasks:
+							<input type="text" name = "dataitem_{{item.id}}_feedback_sentence_analysis_4" placeholder = "time in seconds">
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+		</ul>
+	</div>
+</div>
+<!-- Feedback - Instagram #Trento tasks - Experience -->
+<div class="list-block hide-if-empty">
+	<div class="list-group">
+		<ul>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-text"><b>Feedback on "Instagram #Trento" tasks:</b></div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_feedback_instagram_1' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Did you find "Instagram #Trento" tasks instructions clear?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_feedback_instagram_1]"  answer="did not read them">Did not <br/>read them</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_feedback_instagram_1]"  answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_feedback_instagram_1]"  answer="no">No</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Indicate your interest in performing "Instagram #Trento" task:<br/> -3 - super boring, +3 - super interesting
+							<div class="range-slider">
+								<input type = "range" name = "dataitem_{{item.id}}_feedback_instagram_2" value-to-text=".text_{{item.id}}_feedback_instagram_2" min="-3" max="3" value="0" step="1">	
+								<b><p class="text_{{item.id}}_feedback_instagram_2 center">0</p></b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Indicate how hard "Instagram #Trento" task was for you:<br/> -3 - super hard, +3 - super easy
+							<div class="range-slider">
+								<input type = "range" name = "dataitem_{{item.id}}_feedback_instagram_3" value-to-text=".text_{{item.id}}_feedback_instagram_3" min="-3" max="3" value="0" step="1">	
+								<b><p class="text_{{item.id}}_feedback_instagram_3 center">0</p></b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem question notanswered">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-input item-text">How much time do you think you have spent in average on completing "Instagram #Trento" tasks:
+							<input type="text" name = "dataitem_{{item.id}}_feedback_instagram_4" placeholder = "time in seconds">
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+		</ul>
+	</div>
+</div>
+<!-- Rewards-->
+<div class="list-block hide-if-empty">
+	<div class="list-group">
+		<ul>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-text"><b>Rewards:</b></div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_reward_1' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Do you think that a reward of 0.03 euro is enough for these tasks?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_1]"  answer="not enough">not<br/>nough</a>
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_1]"  answer="enough">enough</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_1]"  answer="too much">too<br/>much</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_reward_2' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Was the process of getting a coupon for a coffee intuitive for you?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_2]"  answer="did not try">I did not<br/> try</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_2]"  answer="yes">yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_2]"  answer="no">no</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_reward_3' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Did you experience any issues with getting a coffee via coupon in the bar?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_3]"  answer="did not try">I did not<br/> try</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_3]"  answer="yes">yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_reward_3]"  answer="no">no</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+		</ul>
+	</div>
+</div>
+<!-- Overall experience about the platform-->
+<div class="list-block hide-if-empty">
+	<div class="list-group">
+		<ul>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-text"><b>Overall experience about the platform:</b></div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Please rate your overall experience of using CrowdCafe from your smartphone:
+							<div class="range-slider">
+								<input type = "range" name = "dataitem_{{item.id}}_platform_1" value-to-text=".text_{{item.id}}_platform_1" min="-3" max="3" value="0" step="1">	
+								<b><p class="text_{{item.id}}_platform_1 center">0</p></b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="swipeout dataitem question notanswered">
+				<input type = 'hidden' name='dataitem_{{item.id}}_platform_2' class='dataitem_answer'>
+				<div class="swipeout-content item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text">Do you plan to use the platform in future, when new tasks will be posted?</div>
+					</div>
+				</div>
+				<div class="swipeout-actions">
+					<div class="swipeout-actions-inner">
+						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_platform_2]"  answer="not sure">not sure</a>
+						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_platform_2]"  answer="yes">yes</a>
+						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_platform_2]"  answer="no">no</a>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Please write what you <b>liked</b> most about the platform?
+							<div class="item-input">
+								<input type="text" name = "dataitem_{{item.id}}_platform_3" placeholder = "I liked ...." value = "">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Please write what you <b>disliked</b> most about the platform?
+							<div class="item-input">
+								<input type="text" name = "dataitem_{{item.id}}_platform_4" placeholder = "I did not like ...." value = "">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+			<li class="dataitem">
+				<div class="item-content">
+					<div class="item-media"><i class="fa fa-question-circle"></i></div>
+					<div class="item-inner">
+						<div class="item-text item-input">Any additional feedback:
+							<div class="item-input">
+								<input type="text" name = "dataitem_{{item.id}}_feedback" placeholder = "your feedback" value = "">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- ------------------------ -->
+		</ul>
+	</div>
 </div>
