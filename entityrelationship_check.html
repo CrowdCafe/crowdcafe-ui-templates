@@ -1,29 +1,27 @@
-<div class="list-block hide-if-empty">
+<div class="list-block">
 	<div class="list-group">
 		<ul>
-			<li class="dataitem" instance-id="{{item.id}}">
-
-				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' class='dataitem_answer'>
+			<li >
+				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' {%if item.value.feedback_relationship_is_correct %} gold ="{{item.value.gold_relationship_is_correct}}" feedback="{{item.value.feedback_relationship_is_correct}}"{%endif%} class='dataitem_answer'>
 				<div class="item-content">
 					<div class="item-inner">
-						<div class="item-text"><b class="muted">{{forloop.counter}}. Please read the text:</b><br/><font style="color:black;">{{item.value.sentence}}</font><br/> <b class="muted">Answer the questions by swiping from right to left:</b> </div>
+						<div class="item-text"><b class="muted">{{item.value.feedback_relationship_is_correct}}{{forloop.counter}}. Please read the text:</b><br/><font style="color:black;">{{item.value.sentence}}</font><br/> <b class="muted">Answer the questions by swiping from right to left:</b> </div>
 					</div>
 				</div>
 			</li>
 			<li class="swipeout dataitem question notanswered" instance-id="{{item.id}}">
-
-				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' class='dataitem_answer'>
+				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' {%if item.value.feedback_relationship_is_correct %} gold ="{{item.value.gold_relationship_is_correct}}" feedback="{{item.value.feedback_relationship_is_correct}}"{%endif%} class='dataitem_answer'>
 				<div class="swipeout-content item-content">
 					<div class="item-media"><i class="fa fa-question-circle"></i></div>
 					<div class="item-inner">
-						<div class="item-text">Do you understand from this text that: <b>{{item.value.name1}}</b> -> <b>{{item.value.relationship}}</b> -> <b>{{item.value.name2}}</b> ?</div>
+						<div class="item-text">Do you understand from this text that: <b>{{item.value.name1}}</b> -> <b>{{item.value.relationship}}</b> -> <b>{{item.value.name2}}</b> ? {{item.value.feedback_relationship_is_correct}}</div>
 					</div>
 				</div>
 				<div class="swipeout-actions">
 					<div class="swipeout-actions-inner">
-						<a href="#" class="demo-actions neutral swipeout-delete" answer-to="[name=dataitem_{{item.id}}_relationship_is_correct]"  answer="I dont know">I dont know</a>
-						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_relationship_is_correct]"  answer="yes">Yes</a>
-						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_relationship_is_correct]"  answer="no">No</a>
+						<a href="#" class="demo-actions neutral" answer-to="[name=dataitem_{{item.id}}_relationship_is_correct]"  answer="I dont know">I dont know</a>
+						<a href="#" class="demo-actions positive" answer-to="[name=dataitem_{{item.id}}_relationship_is_correct]"  answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative" answer-to="[name=dataitem_{{item.id}}_relationship_is_correct]"  answer="no">No</a>
 					</div>
 				</div>
 			</li>
@@ -37,8 +35,8 @@
 				</div>
 				<div class="swipeout-actions">
 					<div class="swipeout-actions-inner">
-						<a href="#" class="demo-actions positive swipeout-delete" answer-to="[name=dataitem_{{item.id}}_sentence_messy]" answer="yes">Yes</a>
-						<a href="#" class="demo-actions negative swipeout-delete" answer-to="[name=dataitem_{{item.id}}_sentence_messy]" answer="no">No</a>
+						<a href="#" class="demo-actions positive" answer-to="[name=dataitem_{{item.id}}_sentence_messy]" answer="yes">Yes</a>
+						<a href="#" class="demo-actions negative" answer-to="[name=dataitem_{{item.id}}_sentence_messy]" answer="no">No</a>
 					</div>
 				</div>
 			</li>
