@@ -2,10 +2,9 @@
 	<div class="list-group">
 		<ul>
 			<li >
-				<input type = 'hidden' name='dataitem_{{item.id}}_relationship_is_correct' {%if item.value.feedback_relationship_is_correct %} gold ="{{item.value.gold_relationship_is_correct}}" feedback="{{item.value.feedback_relationship_is_correct}}"{%endif%} class='dataitem_answer'>
 				<div class="item-content">
 					<div class="item-inner">
-						<div class="item-text"><b class="muted">{{item.value.feedback_relationship_is_correct}}{{forloop.counter}}. Please read the text:</b><br/><font style="color:black;">{{item.value.sentence}}</font><br/> <b class="muted">Answer the questions by swiping from right to left:</b> </div>
+						<div class="item-text"><b class="muted">{%if item.value.feedback_relationship_is_correct %}FEEDBACK/GOLD{%endif%}{{forloop.counter}}. Please read the text:</b><br/><font style="color:black;">{{item.value.sentence}}</font><br/> <b class="muted">Answer the questions by swiping from right to left:</b> </div>
 					</div>
 				</div>
 			</li>
