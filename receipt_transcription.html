@@ -1,0 +1,62 @@
+<div class="list-block content-block">
+	<div class="content-block-inner">
+		<div class='media-picture'>
+			<img src="{{item.value.image_url}}">
+		</div>
+		<ul>
+			<li>
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-input">
+							<input type="text"  name="dataitem_{{item.id}}_company" placeholder="Company name (without address)">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul class='receipt-items'>
+		</ul>
+		<ul>
+			<li>
+				<div class="row">
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="col-60"><a href="#" class="button active add-receipt-item">add item</a></div>
+							<div class="col-40"><input type="text" name="dataitem_{{item.id}}_total" placeholder="Receipt total price"></div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+document.onreadystatechange = function () {
+	var state = document.readyState;
+	var receipt{{item.id}}_items_amount = 0;
+	if (state == 'interactive') {
+		console.log('ready');
+	} else if (state == 'complete') {
+		$$('.add-receipt-item').on('click',function(){
+			console.log('add');
+			receipt{{item.id}}_items_amount++;
+			var container = $$(this).parents('.content-block-inner').children('.receipt-items');
+			var template = '<li>'+
+			'<div class="row">'+
+			'<div class="item-content">'+
+			'<div class="item-inner">'+
+			'<div class="col-60"><input type="text" name="dataitem_{{item.id}}_item_title_'+receipt{{item.id}}_items_amount+'" placeholder="item name"></div>'+
+			'<div class="col-20"><input type="text" name="dataitem_{{item.id}}_item_price_'+receipt{{item.id}}_items_amount+'" placeholder="price"></div>'+
+			'<div class="col-20"><a href="#" class="button button-cancel remove-receipt-item">del</a></div>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</li>';
+			$$(container).append(template);
+			$$('.remove-receipt-item').on('click',function(){
+				$$(this).parents('li').remove();
+			});
+		});
+	};
+};
+</script>

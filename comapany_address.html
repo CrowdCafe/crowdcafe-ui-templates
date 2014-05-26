@@ -1,0 +1,46 @@
+<div class="content-block-title">Find the address of the company: <b>{{item.value.company}}</b></div>
+<div class="content-block-title">Check <a href="https://www.google.com/maps/place/{{item.value.company}}" target = "_blank" class="external">Google maps search</a></div>
+<div class="content-block-title">Check <a href="https://www.google.it/?#q={{item.value.company}}" target = "_blank" class="external">Google web results</a></div>
+<div class="list-block">
+	<ul>
+		<li>
+			<div class="item-content">
+				<div class="item-inner">
+					<div class="item-input">
+						<input type="text" name="dataitem_{{item.id}}_street" placeholder="Street address">
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item-content">
+				<div class="item-inner">
+					<div class="item-input">
+						<input type="text" name="dataitem_{{item.id}}_city" placeholder="City">
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item-content">
+				<div class="item-inner">
+					<div class="item-input">
+						<input type="text" name="dataitem_{{item.id}}_zip" placeholder="ZIP code">
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item-content">
+				<div class="item-inner">
+					<div class="item-input">
+						<select name="dataitem_{{item.id}}_country">
+							<option>USA</option>
+							<option>Outside</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
