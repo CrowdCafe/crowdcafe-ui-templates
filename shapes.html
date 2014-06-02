@@ -2,8 +2,7 @@
 	<div class="content-block-inner">
 		<div class="item-title label">Image {{forloop.counter}}</div>
 		<div class='media-picture'>
-			<img src="{{item.value.image_url}}" id = "image_{{item.id}}">
-			<canvas id = "canvas_{{item.id}}" ></canvas>
+			<img src="{{item.value.image_url}}" id = "image_{{item.id}}" annotation-type="shapes" annotation-name="canvas_{{item.id}}">
 			<div class="item-content">
 
 				<div class="item-inner">
@@ -15,68 +14,3 @@
 		</div>
 	</div>
 </div>
-<script>
-document.onreadystatechange = function () {
-	function putTogetherPosition(canvas,image){
-		var offset = image.offset();
-		canvas.css('top',offset.top+'px');
-		canvas.css('left',offset.left+'px');
-
-	}
-	function putTogetherSize(canvas,image){
-		canvas.attr('width',image.width());
-		canvas.attr('height',image.height());
-	}
-	$$('.page-content').on('scroll',function(){
-		console.log($$(this));
-	});
-	var state = document.readyState;
-	var receipt{{item.id}}_items_amount = 0;
-	if (state == 'interactive') {
-		console.log('ready');
-	} else if (state == 'complete') {
-
-		var canvas = $$('#canvas_{{item.id}}');
-		var image = $$('#image_{{item.id}}');
-
-		putTogetherSize(canvas,image);
-		putTogetherPosition(canvas,image);
-		$$('.page-content').on('scroll',function(){
-			putTogetherPosition(canvas,image);
-		});
-		$$(window).on('resize',function(){
-			putTogetherSize(canvas,image);
-		});
-
-		var active_shape = false;
-
-		canvas.on('click',function(event){
-			var pos = canvas[0].position;
-			var offset = canvas.offset();
-			console.log(offset);
-			console.log(event);
-			var position = {
-				'x':event.x - offset.left,
-				'y':event.y - offset.top
-			};
-			if (!active_shape){
-				active_shape = new Shape(canvas[0]);
-			}
-
-			var clickedDot = active_shape.getClickedDot(position);
-			console.log(clickedDot);
-
-			if (clickedDot){
-				if (clickedDot.i == 0){
-					var edge = new Edge(active_shape.dots[active_shape.dots.length - 1],active_shape.dots[0]);
-					active_shape = false;
-				}
-			}else{
-				var dot = new Dot(active_shape,position);
-			}
-
-
-		});
-	};
-};
-</script>
