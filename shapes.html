@@ -2,9 +2,12 @@
 	<div class="content-block-inner">
 		<div class="item-title label">Image {{forloop.counter}}</div>
 		<div class='media-picture'>
-			<img src="{{item.value.image_url}}" id = "image_{{item.id}}" annotation-type="shapes" annotation-name="dataitem_{{item.id}}_shape">
+			<img src="{{item.value.image_url}}" id = "image_{{item.id}}" annotation-type="shapes" annotation-canvas="canvas_{{item.id}}" annotation-name="dataitem_{{item.id}}_shapes">
+			<div class='raphael'></div>
+			<div class='row'>
+				<div class="col-66">_</div> <div class="col-33"><a href="#" class="button button-round button-cancel"><i class="fa fa-reply"></i></a></div>
+			</div>
 			<div class="item-content">
-
 				<div class="item-inner">
 					<div class="item-input">
 						<input type="text" name = "dataitem_{{item.id}}_tags" placeholder = "tag1, tag2, tag3 ...">
